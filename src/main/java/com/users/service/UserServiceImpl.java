@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean isPasswordValid(String password) {
 		boolean isValid = false;
-		String emailPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,}$";
+		String emailPattern = "^(?=.*[A-Z])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z].*[a-z].*[a-z]).{8}$";
 		Pattern pattern = Pattern.compile(emailPattern);
 		if (password != null) {
 			Matcher matcher = pattern.matcher(password);
